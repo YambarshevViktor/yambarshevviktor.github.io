@@ -87,7 +87,7 @@ body {
 .link {
   color: var(--color-accent);
   text-decoration: none;
-  transition: background-color 0.3s;
+  /*transition: background-color 0.3s;*/
   padding: 0.2rem 0.4rem;
   border-radius: 0.2rem;
   margin-left: -0.4rem;
@@ -98,7 +98,8 @@ body {
 }
 
 .link.secondary {
-  color: var(--color-accent-secondary);
+  color: var(--color-text-light);
+  border-bottom: 1px solid var(--color-hover-bg);
 }
 
 /* Правая часть */
@@ -138,8 +139,8 @@ blockquote {
 }
 
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 50%;
+  height: 50%;
   border-radius: 50%;
   display: block;
   margin-bottom: 1rem;
