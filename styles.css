@@ -29,6 +29,9 @@ body {
     background-color: var(--color-bg-dark);
     color: var(--color-text-dark);
   }
+  .link.secondary {
+    color: var(--color-text-dark) !important;
+  }
 }
 
 /* Контейнер */
@@ -198,5 +201,9 @@ blockquote {
     @media (prefers-color-scheme: dark) {
         background-color: var(--color-bg-dark);
     }
+  }
+
+  .cv-resume {
+    display: none;
   }
 }
