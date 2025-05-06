@@ -1,8 +1,8 @@
 /* Переменные цветов */
 :root {
-  --color-bg-light: #ffffff;
+  --color-bg-light: #121212;
   --color-bg-dark: #121212;
-  --color-text-light: #000000;
+  --color-text-light: #ffffff;
   --color-text-dark: #ffffff;
   --color-accent: rgb(255, 0, 129);
   --color-accent-secondary: rgb(255, 153, 205);
