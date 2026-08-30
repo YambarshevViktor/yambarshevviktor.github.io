@@ -1,9 +1,6 @@
-/* Переменные цветов */
 :root {
-  --color-bg-light: #121212;
-  --color-bg-dark: #121212;
-  --color-text-light: #ffffff;
-  --color-text-dark: #ffffff;
+  --color-bg: #121212;
+  --color-text: #ffffff;
   --color-accent: rgb(255, 0, 129);
   --color-accent-secondary: rgb(255, 153, 205);
   --color-hover-bg: rgba(255, 0, 129, 0.2);
@@ -13,79 +10,45 @@
   --font-line-height: 1.4;
 }
 
-/* Стили для светлой и темной темы */
 body {
   font-family: var(--font-family-main);
-  background-color: var(--color-bg-light);
-  color: var(--color-text-light);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   display: flex;
   margin: 0;
-  padding: 0;
   text-transform: lowercase;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--color-bg-dark);
-    color: var(--color-text-dark);
-  }
-  .link.secondary {
-    color: var(--color-text-dark) !important;
-  }
-  .fixed-header {
-    background-color: var(--color-bg-dark) !important;
-  }
-}
-
-/* Контейнер */
-.container {
-  display: flex;
-  width: 100%;
-}
-
-
-
-/* Фиксированная шапка */
 .fixed-header {
   position: fixed;
   width: 100%;
-  background-color: var(--color-bg-light);
+  background-color: var(--color-bg);
   z-index: 1000;
-  padding: 0.6em 0 0.6em 0;
-  margin: 0 auto;
+  padding: 0.6em 0;
 }
 
-/* Список контактов */
 .contact-info {
   list-style: none;
-  display: flex; /* Горизонтальное расположение */
-  gap: 2em; /* Расстояние между элементами */
+  display: flex;
+  gap: 2em;
   margin: 0 auto;
   padding: 0;
-  justify-content: flex-start; /* Элементы выравнены в начале строки */
-  align-items: center; /* Центровка по вертикали */
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 55%;
-  align-items: flex-start
 }
 
-/* Элементы списка */
 .contact-info li {
   margin: 0;
   padding: 0;
 }
 
-
-
-
-/* Ссылки */
 .link {
   color: var(--color-accent);
   text-decoration: none;
-  /*transition: background-color 0.3s;*/
   padding: 0.2rem 0.4rem;
   border-radius: 0.2rem;
   margin-left: -0.4rem;
-  z-index: 999;
 }
 
 .link:hover {
@@ -93,11 +56,10 @@ body {
 }
 
 .link.secondary {
-  color: var(--color-text-light);
+  color: var(--color-text);
   border-bottom: 1px solid var(--color-hover-bg);
 }
 
-/* Правая часть */
 main {
   width: 60%;
   margin: 0 auto;
@@ -105,12 +67,15 @@ main {
   box-sizing: border-box;
 }
 
-/* Заголовок и текст */
 h1, h2 {
   font-weight: 700;
   font-size: var(--font-size-main);
   margin-bottom: 1.0rem;
   margin-top: 4.0rem;
+}
+
+.footer-title {
+  margin-bottom: 4.0rem;
 }
 
 p {
@@ -124,7 +89,6 @@ p {
   font-size: var(--font-size-small);
 }
 
-/* Цитата */
 blockquote {
   border-left: 1px solid var(--color-accent);
   padding-left: 1em;
@@ -132,7 +96,6 @@ blockquote {
   color: inherit;
 }
 
-/* Изображение */
 .main-image {
   width: 170%;
   margin-left: -35%;
@@ -143,15 +106,6 @@ video {
   width: 100%;
 }
 
-.avatar {
-  width: 30%;
-  height: 30%;
-  border-radius: 0.2em;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-/* Стили списка с заменой буллита */
 .custom-list {
   list-style: none;
   padding-left: 0;
@@ -167,69 +121,47 @@ video {
   margin-left: -1em;
 }
 
+.custom-list li.year::before {
+  content: none;
+}
 
 .image-row {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  position: relative;
 }
 
 .image-block {
   text-align: center;
-  position: relative;
-  text-decoration: none; /* Убираем подчеркивание у ссылок */
-  margin-left: -30px; /* Перекрытие блоков */
-  z-index: 0; /* Базовый слой */
+  text-decoration: none;
+  margin-left: -30px;
+  z-index: 0;
 }
 
-.image-block:nth-child(1) {
-  z-index: 1; 
-  transform: rotate(-6deg);
-}
-
-.image-block:nth-child(2) {
-  z-index: 2; 
-  transform: rotate(2deg);
-}
-
-.image-block:nth-child(3) {
-  z-index: 3; 
-  transform: rotate(-8deg);
-}
-
-.image-block:nth-child(4) {
-  z-index: 2; 
-  transform: rotate(10deg);
-}
-
-.image-block:nth-child(5) {
-  z-index: 3; 
-  transform: rotate(6deg);
-}
-
-.image-block:nth-child(6) {
-  z-index: 1; 
-  transform: rotate(-4deg);
-}
+.image-block:nth-child(1) { z-index: 1; transform: rotate(-6deg); }
+.image-block:nth-child(2) { z-index: 2; transform: rotate(2deg); }
+.image-block:nth-child(3) { z-index: 3; transform: rotate(-8deg); }
+.image-block:nth-child(4) { z-index: 2; transform: rotate(10deg); }
+.image-block:nth-child(5) { z-index: 3; transform: rotate(6deg); }
+.image-block:nth-child(6) { z-index: 1; transform: rotate(-4deg); }
 
 .image {
-  width: 110%; /* Задайте нужную ширину картинки */
+  width: 110%;
   transition: transform 0.3s ease;
 }
 
 .image:hover {
-  transform: rotate(3deg) scale(1.1); /* Поворот и увеличение */
+  transform: rotate(3deg) scale(1.1);
 }
 
 .image-block:nth-child(2) .image:hover {
-  transform: rotate(-3deg) scale(1.1); /* Поворот влево и увеличение */
+  transform: rotate(-3deg) scale(1.1);
 }
 
 .caption {
   margin-top: 0.5rem;
   font-size: 1rem;
-  color: #333; /* Цвет текста подписи */
+  color: #333;
 }
 
 .divider::after {
@@ -240,22 +172,7 @@ video {
   text-align: center;
 }
 
-
-
-
-/* Адаптивная версия для мобильных */
 @media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: fixed;
-    bottom: 0;
-    top: auto;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 0.5rem;
-  }
-
   .container {
     flex-direction: column;
   }
@@ -263,25 +180,17 @@ video {
   main {
     width: 100%;
     margin: 0;
-    padding-top: 4rem; /* чтобы не пересекаться с фиксированным sidebar */
+    padding-top: 4rem;
   }
 
   .contact-info {
     display: flex;
     gap: 0.4em;
     padding-right: 0.5rem;
+    margin: 0 1em;
   }
 
-  .sidebar {
-    background-color: var(--color-bg-light);
-    border-top: 1px solid var(--color-accent-secondary);
-    
-    @media (prefers-color-scheme: dark) {
-        background-color: var(--color-bg-dark);
-    }
-  }
-
-  .cv-resume {
+  .contact-info li:first-child {
     display: none;
   }
 
@@ -289,13 +198,5 @@ video {
   video {
     width: 120%;
     margin: 0 -2em;
-  }
-
-  .contact-info {
-    margin: 0 1em;
-  }
-
-  .contact-info li:first-child {
-    display: none;
   }
 }
